@@ -1,0 +1,14 @@
+{
+    "bot": {
+        "token": "",
+        "prefix": "=",
+        "owners": [
+        ],
+        "main_discord_id": "",
+        "default_playing": ""
+    },
+    "commands": {
+        "google_auth_key": "",
+        "open_weather_map_api": ""
+    }
+}

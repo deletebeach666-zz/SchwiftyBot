@@ -42,7 +42,10 @@ module.exports = class UserSteamidCommand extends Commando.Command {
                 } else {
                     var game = "";
                     var hours = 0;
-                    if (data.profile.mostPlayedGames.mostPlayedGame["0"] == undefined) {
+                    if (data.profile.mostPlayedGames === undefined) {
+                        game = "N/A";
+                        hours = "N/A"
+                    } else if (data.profile.mostPlayedGames.mostPlayedGame["0"] == undefined) {
                         game = data.profile.mostPlayedGames.mostPlayedGame.gameName;
                         hours = data.profile.mostPlayedGames.mostPlayedGame.hoursOnRecord
                     } else {

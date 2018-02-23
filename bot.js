@@ -21,6 +21,7 @@ client
     .on('ready', () => {
         console.log(`-> Client ready! \n-> Logged in as ${client.user.username}#${client.user.discriminator} (${client.user.id})`);
         console.log(`-> Servers: ${client.guilds.array().length}`);
+        client.user.setActivity(config.get('bot.default_playing'));
     })
     .on('commandError', (cmd, err) => {
         if(err instanceof Commando.FriendlyError) return;

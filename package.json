@@ -1,6 +1,6 @@
 {
-  "name": "nashbot",
-  "version": "0.0.2",
+  "name": "SchwiftyBot",
+  "version": "0.0.3",
   "description": "",
   "main": "bot.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/Discord-Bots-Om/NashBot.git"
+    "url": "https://github.com/deletebeach666/SchwiftyBot.git"
   },
   "author": "Om",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/Discord-Bots-Om/NashBot/issues"
+    "url": "https://github.com/deletebeach666/SchwiftyBot/issues"
   },
-  "homepage": "https://gitlab.com/Discord-Bots-Om/NashBot#README",
+  "homepage": "https://github.com/deletebeach666/SchwiftyBot#README",
   "dependencies": {
     "config": "^1.25.1",
     "discord.js": "^11.0.0",

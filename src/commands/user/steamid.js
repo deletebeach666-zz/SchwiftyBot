@@ -3,6 +3,7 @@ const request = require("request");
 const Discord = require('discord.js');
 const config = require('../../Config.js');
 var to_json = require('xmljson').to_json;
+var striptags = require('striptags');
 
 module.exports = class UserSteamidCommand extends Commando.Command {
     constructor(client) {
@@ -34,7 +35,7 @@ module.exports = class UserSteamidCommand extends Commando.Command {
                     .setColor((data.profile.visibilityState) ? "#ffffff" : "#FFFFFF")
                     .addField("SteamID", data.profile.steamID64, true)
                     .addField("Location", data.profile.location, true)
-                    .setDescription(data.profile.summary)
+                    .setDescription(striptags(data.profile.summary))
                     .setThumbnail(data.profile.avatarFull)
                 msg.channel.send(user_card);
             });

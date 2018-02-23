@@ -15,12 +15,12 @@ module.exports = class GeneralInfoCommand extends Commando.Command {
     }
     
     async run(msg, args, client) {
-        //console.log(this.client.guilds.array().length);
         var card = new Discord.RichEmbed()
+            .setDescription("Let's fucking get schwifty!!")
             .setTitle("Bot information")
             .addField("Total Servers", this.client.guilds.array().length, true)
-            .addField("Bot Uptime", moment(this.client.uptime).format("HH:mm:ss"), true)
-            .setAuthor("NashBot", "", "https://discord.gg/wGrNNy7")
+            .addField("Bot Hardware Uptime", moment(this.client.uptime).format("HH:mm:ss"), true)
+            .setAuthor("Schwifty", "", "https://discord.gg/aaeFxfp")
             .setColor("#B4045F")
             .setFooter(util.format("%shelp for more information", config.get("bot.prefix")));
         

@@ -35,10 +35,10 @@ module.exports = class OwnerPlayingCommand extends Commando.Command {
     async run (msg, args, client) {
         if (args.game === "0")
         {
-            this.client.user.setActivity(null);
+            this.client.user.setGame(null);
             msg.reply("Removing now playing.. you horrible person.");
         } else {
-            this.client.user.setActivity(args.game);
+            this.client.user.setGame(args.game);
             msg.reply("I'm now playing **" + args.game + "**");
         }
     }

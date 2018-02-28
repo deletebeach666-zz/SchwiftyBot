@@ -4,3 +4,4 @@ src/commands/music/queue/
 build/*
 src/data/music/queue/*
 package-lock.json
+src/commands/owner/servers.js

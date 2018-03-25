@@ -17,7 +17,7 @@ module.exports = class GeneralWeatherCommand extends Commando.Command {
                 msg.channel.send({embed: {
                   color: 3447003,
                   image: {
-                        "url": "http://belikebill.azurewebsites.net/billgen-API.php?default=1",
+                        "url": "http://belikebill.azurewebsites.net/billgen-API.php?default=1&nocache=" + Math.random(),
                          },
                 }});
     }

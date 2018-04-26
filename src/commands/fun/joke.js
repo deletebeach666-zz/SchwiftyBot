@@ -2,7 +2,7 @@ const Commando = require("discord.js-commando");
 const request = require("request");
 const config = require('../../Config.js');
 
-module.exports = class GeneralWeatherCommand extends Commando.Command {
+module.exports = class GeneralJokeCommand extends Commando.Command {
     constructor(client) {
         super (client, {
             name: "joke",

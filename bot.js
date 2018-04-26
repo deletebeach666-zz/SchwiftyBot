@@ -2,18 +2,27 @@
 const request = require("request");
 const path = require('path');
 const _ = require('underscore');
+const express = require("express");
+const bodyParser = require('body-parser');
 
 /* Load config file */
 const config = require('./src/Config.js');
 const BOT_VER = require('./package.json').version;
 const BOT_OWNERS = config.get('bot.owners');
 const MAIN_DISCORD = config.get("bot.main_discord_id");
+
 /* Commando Installation */
 const Commando = require('discord.js-commando');
 const client = new Commando.Client({
     commandPrefix: config.get('bot.prefix'),
     owner: BOT_OWNERS
 });
+
+/* Initialize other stuff */
+var app = express();
+var urlParser = bodyParser.urlencoded({ extended: false });
+var port = 6969;
+
 
 client
     .on('error', console.error)
@@ -28,7 +37,7 @@ client
         console.error('Error in command ${cmd.groupID}:${cmd.memberName}', err);
     })
     .on('message', (msg) => {
-        //console.log(msg);
+        console.log("(" + msg.guild.name + ") " + msg.member.displayName + ": " + msg.content);
     });
 
 client.registry
@@ -43,5 +52,11 @@ client.registry
     .registerDefaults()
     .registerCommandsIn(path.join(__dirname, 'src/commands'));
 
-
+app.listen(port);
+console.log("Server listening on: http://localhost:" + port + "/ is now ready to accept requests!");
 client.login(config.get('bot.token'));
+
+/* Web Server */
+app.get('/', function (req, res) {
+    res.send("[SchwiftyBot] Bot is currently online!");
+});

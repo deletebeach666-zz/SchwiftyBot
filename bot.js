@@ -37,7 +37,7 @@ client
         console.error('Error in command ${cmd.groupID}:${cmd.memberName}', err);
     })
     .on('message', (msg) => {
-        console.log("(" + msg.guild.name + ") " + msg.member.displayName + ": " + msg.content);
+        //console.log("(" + msg.guild.name + ") " + msg.member.displayName + ": " + msg.content);
     });
 
 client.registry
